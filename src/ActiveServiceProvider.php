@@ -21,9 +21,11 @@ class ActiveServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['active'] = $this->app->share(function($app)
-        {
-            return new Active($app['router']);
+          // $this->app['active'] = $this->app->share(function($app)
+      $this->app->singleton('active', function()        
+
+ {
+            return new Active($this->app['router']);
         });
     }
 
