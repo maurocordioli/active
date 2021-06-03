@@ -137,6 +137,10 @@ class Active
         return false;
     }
 
+   
+    
+
+    
     /**
      * Check if the current URI matches one of specific patterns (using `str_is`)
      *
@@ -211,6 +215,11 @@ class Active
         }
 
         return false;
+    }
+
+    
+    public function routePattern($patterns,$happy='active',$unhappy='') {
+        return Active::checkRoutePattern($patterns)?$happy:$unhappy;
     }
 
     /**
